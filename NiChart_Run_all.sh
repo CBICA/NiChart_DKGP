@@ -29,10 +29,10 @@ fi
 ### data_dl_muse_nichart_spare_test_unnorm.csv
 ### data_dl_muse_nichart_mmse_test_unnorm.csv
 ### data_dl_muse_nichart_adas_test_unnorm.csv
-python preprocess_csv.py -i $INPUT_ROI_DEMOG -o "$OUTPUT_DIR/data"
+python preprocess_csv.py -i "$INPUT_ROI_DEMOG" -o "$OUTPUT_PATH/data"
 
 # # STEP 2: Run Preprocessing
-# ./run_preprocess_data.sh ${OUTPUT_PATH}/data
+./run_preprocess_data.sh ${OUTPUT_PATH}/data
 
 # # STEP 3: Run Inference
-# ./run_inference.sh all ${OUTPUT_PATH}/output
+./run_inference.sh all ${OUTPUT_PATH}/output
