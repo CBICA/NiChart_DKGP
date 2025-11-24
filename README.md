@@ -80,6 +80,8 @@ The comprehensive inference script supports all biomarker types with a single co
 
 ```bash
 
+# Run the COMPLETE inferencing pipeline including the preprocessing step (NiChart)
+NiChart_Run_all.sh {INPUT_CSV_PATH} {OUTPUT_FOLDER_PATH}
 
 # Run inference for specific biomarkers
 ./run_inference.sh /output/folder/path/ hippocampus_right

@@ -10,7 +10,6 @@
 !*.json
 !*.txt
 !*.gitignore
-!*.pth
 # Block all other file types
 *
 !*/
@@ -24,6 +23,14 @@
 !*.json
 !*.txt
 !*.gitignore
+
+# Re-allow models to be uploaded
+!models/*.pth
+!models_cognitive/*/*.pth
+!models_spare/*.pth
+
+# Re-allow reference pkl files to be uploaded
+!references/*.pkl
 
 # Block specific directories that should never be tracked
 __pycache__/
