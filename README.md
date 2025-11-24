@@ -18,7 +18,7 @@ The DKGP model combines deep neural networks with Gaussian Processes to provide:
 **Option A: Automated Setup (Recommended)**
 ```bash
 # Clone the repository
-git clone git@github.com:vatass/DKGP.git
+git clone git@github.com:CBICA/NiChart_DKGP.git
 cd DKGP
 
 # Run the automated setup script
@@ -64,29 +64,33 @@ source dkgp-venv/bin/activate
 python -c "import torch; import gpytorch; import pandas; import numpy; import sklearn; print('✅ All dependencies installed successfully!')"
 
 # Test inference
-./run_inference.sh hippocampus_right
+./run_inference.sh /output/folder/path/ hippocampus_right
 ```
 
 ## Inference Usage
+
+```bash
+# Activate environment
+source dkgp-venv/bin/activate
+```
 
 ### Main Inference Script
 
 The comprehensive inference script supports all biomarker types with a single command:
 
 ```bash
-# Activate environment
-source dkgp-venv/bin/activate
+
 
 # Run inference for specific biomarkers
-./run_inference.sh hippocampus_right
-./run_inference.sh spare_ad
-./run_inference.sh mmse
+./run_inference.sh /output/folder/path/ hippocampus_right
+./run_inference.sh /output/folder/path/ spare_ad
+./run_inference.sh /output/folder/path/ mmse
 
 # Run inference for all biomarkers
-./run_inference.sh all
+./run_inference.sh /output/folder/path/ all
 
 # Run inference for all 145 Volume ROIs (creates single CSV)
-./run_inference.sh volume_rois
+./run_inference.sh /output/folder/path/ volume_rois
 ```
 
 ### Supported Biomarkers
@@ -111,7 +115,7 @@ source dkgp-venv/bin/activate
 
 ### Output Structure
 
-Results are saved to `./output/` directory:
+Results are saved to `/output/folder/path/` directory:
 
 ```
 output/
@@ -214,8 +218,10 @@ DKGP provides **extremely fast inference** for biomarker trajectory prediction:
 ## File Structure
 
 ```
-DKGP/
-├── run_inference.sh                    # Main inference script
+NiChart_DKGP/
+├── NiChart_Run_all.sh                 # Main inference script
+├── run_preprocess_data.sh             # Initial data preprocessing from a csv containing: ROI Volumes + clinical data & demographics
+├── run_inference.sh                   # Core inference script
 ├── pdkgp_future_inference.py          # Core inference logic
 ├── visualize_trajectories.py          # Validation and plotting
 ├── plot_single_subject.py             # Single subject visualization

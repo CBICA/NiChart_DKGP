@@ -6,10 +6,13 @@
 
 # Set default parameters
 GPU_ID=0
-OUTPUT_DIR="./output"
+# OUTPUT_DIR="./output"
+OUTPUT_DIR=$2
 
-# Create output directory
-mkdir -p $OUTPUT_DIR
+# # Create output directory
+# if [ ! -d "$OUTPUT_DIR" ]; then
+#     mkdir -p $OUTPUT_DIR
+# fi
 
 echo "Starting Trajectory Prediction for the Selected Biomarker..."
 echo "Output directory: $OUTPUT_DIR"
@@ -222,7 +225,7 @@ case "$1" in
         run_inference \
             "SPARE-BA" \
             "./models_spare/population_deep_kernel_gp_1.pth" \
-            "./data/data_dl_muse_nichart_spare_test.csv" \
+            "./data/data_dl_muse_nichart_spare_test_unnorm_preprocessed.csv" \
             1 \
             "spare_ba"
         ;;
@@ -232,7 +235,7 @@ case "$1" in
         run_inference \
             "MMSE" \
             "./models_cognitive/mmse/population_deep_kernel_gp_0.pth" \
-            "./data/data_dl_muse_nichart_mmse_test.csv" \
+            "./data/data_dl_muse_nichart_mmse_test_unnorm_preprocessed.csv" \
             0 \
             "mmse"
         ;;
@@ -241,7 +244,7 @@ case "$1" in
         run_inference \
             "ADAS" \
             "./models_cognitive/adas/population_deep_kernel_gp_0.pth" \
-            "./data/data_dl_muse_nichart_adas_test.csv" \
+            "./data/data_dl_muse_nichart_adas_test_unnorm_preprocessed.csv" \
             0 \
             "adas"
         ;;
@@ -259,7 +262,7 @@ case "$1" in
         run_inference \
             "Right Hippocampus" \
             "./models/population_deep_kernel_gp_14.pth" \
-            "./data/data_dl_muse_nichart_test.csv" \
+            "./data/data_dl_muse_nichart_test_unnorm_preprocessed.csv" \
             14 \
             "hippocampus_right"
         
@@ -267,7 +270,7 @@ case "$1" in
         run_inference \
             "Left Hippocampus" \
             "./models/population_deep_kernel_gp_15.pth" \
-            "./data/data_dl_muse_nichart_test.csv" \
+            "./data/data_dl_muse_nichart_test_unnorm_preprocessed.csv" \
             15 \
             "hippocampus_left"
         
@@ -275,7 +278,7 @@ case "$1" in
         run_inference \
             "Right Lateral Ventricle" \
             "./models/population_deep_kernel_gp_16.pth" \
-            "./data/data_dl_muse_nichart_test.csv" \
+            "./data/data_dl_muse_nichart_test_unnorm_preprocessed.csv" \
             16 \
             "lateral_ventricle_right"
         
@@ -283,7 +286,7 @@ case "$1" in
         run_inference \
             "Left Lateral Ventricle" \
             "./models/population_deep_kernel_gp_17.pth" \
-            "./data/data_dl_muse_nichart_test.csv" \
+            "./data/data_dl_muse_nichart_test_unnorm_preprocessed.csv" \
             17 \
             "lateral_ventricle_left"
         
@@ -291,7 +294,7 @@ case "$1" in
         run_inference \
             "SPARE-AD" \
             "./models_spare/population_deep_kernel_gp_0.pth" \
-            "./data/data_dl_muse_nichart_spare_test.csv" \
+            "./data/data_dl_muse_nichart_spare_test_unnorm_preprocessed.csv" \
             0 \
             "spare_ad"
         
@@ -299,7 +302,7 @@ case "$1" in
         run_inference \
             "SPARE-BA" \
             "./models_spare/population_deep_kernel_gp_1.pth" \
-            "./data/data_dl_muse_nichart_spare.csv" \
+            "./data/data_dl_muse_nichart_spare_test_unnorm_preprocessed.csv" \
             1 \
             "spare_ba"
         
@@ -307,7 +310,7 @@ case "$1" in
         run_inference \
             "MMSE" \
             "./models_cognitive/mmse/population_deep_kernel_gp_0.pth" \
-            "./data/data_dl_muse_nichart_mmse_test.csv" \
+            "./data/data_dl_muse_nichart_mmse_test_unnorm_preprocessed.csv" \
             0 \
             "mmse"
         
@@ -315,7 +318,7 @@ case "$1" in
         run_inference \
             "ADAS" \
             "./models_cognitive/adas/population_deep_kernel_gp_0.pth" \
-            "./data/data_dl_muse_nichart_adas_test.csv" \
+            "./data/data_dl_muse_nichart_adas_test_unnorm_preprocessed.csv" \
             0 \
             "adas"
         ;;

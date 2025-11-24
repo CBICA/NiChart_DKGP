@@ -49,8 +49,8 @@ Thumbs.db
 
 # Block large data and model files specifically
 data/
-models/
-models_*/
+# models/
+# models_*/
 logs_*/
 evaluation_results_*/
 inference_results_*/
@@ -58,6 +58,9 @@ future_inference_results/
 population_demographics_results/
 trajectory_plots/
 hippocampus_analysis/
+
+# For development
+notebook/
 
 # Remove specific result directories
 population_demographics_results/
