@@ -10,11 +10,11 @@
 !*.json
 !*.txt
 !*.gitignore
-
+!*.pth
 # Block all other file types
 *
 !*/
-
+*.Identifier
 # Re-allow the specific file types we want
 !*.py
 !*.md
@@ -47,10 +47,8 @@ Thumbs.db
 *.temp
 *~
 
-# Block large data and model files specifically
+# Block large data files specifically
 data/
-# models/
-# models_*/
 logs_*/
 evaluation_results_*/
 inference_results_*/
